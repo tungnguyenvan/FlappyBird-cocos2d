@@ -4,7 +4,10 @@
 
 #include "GameOver.h"
 
+int mScore;
+
 cocos2d::Scene* GameOver::createScene(int score) {
+    mScore = score;
     return GameOver::create();
 }
 

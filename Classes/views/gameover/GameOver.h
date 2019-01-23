@@ -8,9 +8,6 @@
 #include "cocos2d.h"
 
 class GameOver : public cocos2d::Scene {
-private:
-    int mScore;
-
 public:
     static cocos2d::Scene* createScene(int score);
     virtual bool init();

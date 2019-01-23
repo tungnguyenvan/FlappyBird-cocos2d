@@ -146,7 +146,8 @@ bool MainScene::OnContactBegin(cocos2d::PhysicsContact &contact) {
 
     if ((shapeA->getTag() == TAG_BIRD && shapeB->getTag() == TAG_BARRIER) ||
         (shapeB->getTag() == TAG_BIRD && shapeA->getTag() == TAG_BARRIER)) {
-        cocos2d::Director::getInstance()->replaceScene(cocos2d::TransitionFade::create(0.5, GameOver::createScene(mScore)));
+        auto gameOver = new GameOver();
+        cocos2d::Director::getInstance()->replaceScene(cocos2d::TransitionFade::create(0.5, gameOver->createScene(mScore)));
         this->onExit();
     }
 
